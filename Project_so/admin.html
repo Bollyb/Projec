@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BrightBank Admin — Login Logs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="admin-page">
+<header class="admin-top">
+<div class="brand">BrightBank Admin</div>
+<a href="index.html" class="btn ghost">Open Demo Login</a>
+</header>
+
+
+<section class="admin-panel">
+<div class="auth">
+<label>Admin password
+<input id="adminPass" type="password" placeholder="Enter admin password">
+</label>
+<div class="auth-actions">
+<button id="authBtn" class="btn primary">Enter</button>
+<button id="clearBtn" class="btn danger">Clear all logs</button>
+</div>
+<p class="muted small">Demo admin password: <code>demoAdmin!</code></p>
+</div>
+
+
+<div id="logsArea" class="logs hidden">
+<h2>Stored Login Credentials</h2>
+<div id="loginData" class="log-list">No entries yet.</div>
+</div>
+</section>
+</main>
+
+
+<script src="admin-script.js"></script>
+</body>
+</html>

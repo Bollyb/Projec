@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BrightBank — Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="brand">BrightBank</div>
+<div class="top-actions">
+<button id="logoutBtn" class="btn ghost">Logout</button>
+<a href="admin.html" class="btn">Admin</a>
+</div>
+</header>
+
+
+<main class="dashboard">
+<section class="welcome-card">
+<h1 id="welcomeMsg">Welcome</h1>
+<p class="muted" id="subMsg">Here's your account summary.</p>
+
+
+<div class="balance-card">
+<div class="balance-label">Total Balance</div>
+<div class="balance-amount" id="balanceAmount">₦0.00</div>
+</div>
+
+
+<div class="actions-row">
+<button class="btn primary">Transfer</button>
+<button class="btn ghost">Statements</button>
+</div>
+</section>
+</main>
+
+
+<script src="dashboard-script.js"></script>
+</body>
+</html>

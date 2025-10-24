@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BrightBank — Sign In</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Extra visual polish for the login page */
+  body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    background-image: url('https://images.unsplash.com/photo-1561414927-6d86591d0c4b?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+  }
+
+  .login-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    overflow: hidden;
+    width: 80%;
+    max-width: 900px;
+  }
+
+  .hero {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(160deg, #3b82f6, #60a5fa);
+    color: white;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+
+  .hero-sub {
+    margin: 10px 0 20px;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .form-wrap {
+    padding: 40px;
+    background: white;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #1e3a8a;
+  }
+
+  label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn.primary {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+  }
+
+  .btn.ghost {
+    background-color: transparent;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+  }
+
+  .btn:hover {
+    opacity: 0.9;
+  }
+
+  .muted {
+    color: #666;
+  }
+
+  .small-card {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .login-page {
+      grid-template-columns: 1fr;
+    }
+    .hero {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+<main class="login-page">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="brand" style="font-size:2rem;font-weight:700;">BrightBank</div>
+      <h1 class="hero-title">Secure. Simple. Bright.</h1>
+      <p class="hero-sub">Sign in to view your account and manage your money.</p>
+    </div>
+  </section>
+
+  <section class="form-wrap">
+    <div class="card">
+      <h2>Welcome Back</h2>
+      <p class="muted">Use your credentials to sign in. (Demo only — do not use real passwords.)</p>
+
+      <form id="loginForm" autocomplete="off">
+        <label>Username
+          <input id="username" name="username" type="text" required placeholder="Your username">
+        </label>
+
+        <label>Password
+          <input id="password" name="password" type="password" required placeholder="Your password">
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Sign in</button>
+          <a href="#" id="registerLink" class="btn ghost">Create demo account</a>
+        </div>
+      </form>
+
+      <p class="small muted">To view user logs, open <code>admin.html</code> and use the demo admin password.</p>
+    </div>
+
+    <div class="card small-card">
+      <h3>Why BrightBank?</h3>
+      <ul>
+        <li>Fast demo login</li>
+        <li>Modern, responsive UI</li>
+        <li>Admin log viewer (demo only)</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+<script>
+  // connect "Create demo account" link to demo creation logic
+  document.getElementById('registerLink').addEventListener('click', (e)=>{
+    e.preventDefault();
+    const event = new Event('click');
+    const demoBtn = document.createElement('button');
+    demoBtn.id = 'demoBtn';
+    document.body.appendChild(demoBtn);
+    demoBtn.dispatchEvent(event);
+  });
+</script>
+</body>
+</html>
